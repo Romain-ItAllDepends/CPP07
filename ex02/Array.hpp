@@ -6,13 +6,14 @@
 /*   By: rgobet <rgobet@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 15:57:18 by rgobet            #+#    #+#             */
-/*   Updated: 2024/11/18 09:47:19 by rgobet           ###   ########.fr       */
+/*   Updated: 2024/11/18 12:52:55 by rgobet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
 # include <exception>
+# include <iostream>
 
 template< typename T >
 class Array
@@ -20,14 +21,24 @@ class Array
 	private:
 		T				*_array;
 		unsigned int	_size;
+
+		class OutOfRangeException: public std::exception {
+			public:
+				virtual const char* what() const throw();
+		};
 	public:
 		Array(void);
-		Array(Array const &obj);
+		Array(unsigned int n);
+		Array(Array<T> const &obj);
 		~Array(void);
 
-		Array<T>	&operator=(Array const &obj);
+		unsigned int	size() const;
+
+		Array<T>		&operator=(Array<T> const &obj);
+		T			&operator[](const unsigned int size);
 };
 
-# include "Array.tpp"
+template< typename T >
+std::ostream	&operator<<(std::ostream& out, const Array<T>& a);
 
 #endif

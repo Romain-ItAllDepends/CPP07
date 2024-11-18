@@ -1,7 +1,6 @@
 NAME=array
 
-MY_SOURCES= main.cpp \
-			Array.tpp
+MY_SOURCES= main.cpp
 
 red='\033[0;31m'
 green='\033[0;32m'
