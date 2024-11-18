@@ -21,11 +21,6 @@ class Array
 	private:
 		T				*_array;
 		unsigned int	_size;
-
-		class OutOfRangeException: public std::exception {
-			public:
-				virtual const char* what() const throw();
-		};
 	public:
 		Array(void);
 		Array(unsigned int n);
@@ -36,6 +31,11 @@ class Array
 
 		Array<T>		&operator=(Array<T> const &obj);
 		T			&operator[](const unsigned int size);
+		
+		class OutOfRangeException: public std::exception {
+			public:
+				virtual const char* what() const throw();
+		};
 };
 
 template< typename T >
