@@ -6,7 +6,7 @@
 /*   By: rgobet <rgobet@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 13:25:11 by rgobet            #+#    #+#             */
-/*   Updated: 2024/11/16 15:38:20 by rgobet           ###   ########.fr       */
+/*   Updated: 2024/11/30 09:41:33 by rgobet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	main(void) {
 	std::cout << std::endl << "Int -------------------------" << std::endl << std::endl;
 	f(tabi, 5, &f1);
 	std::cout << std::endl << "String ----------------------" << std::endl << std::endl;
-	f(tabf, 5, &f1);
-	std::cout << std::endl << "Float -----------------------" << std::endl << std::endl;
 	f(tabs, 5, &f1);
+	std::cout << std::endl << "Float -----------------------" << std::endl << std::endl;
+	f(tabf, 5, &f1);
 	return (0);
 }

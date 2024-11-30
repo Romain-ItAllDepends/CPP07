@@ -16,7 +16,6 @@ int main(int, char**)
         numbers[i] = value;
         mirror[i] = value;
     }
-    //SCOPE
     {
         Array<int> tmp = numbers;
         Array<int> test(tmp);
@@ -51,6 +50,19 @@ int main(int, char**)
     {
         numbers[i] = rand();
     }
-    delete [] mirror;//
+
+	// Test for empty array
+
+	try
+	{
+		Array<int> test(0);
+		std::cout << "size: " << test.size() << std::endl;
+		std::cout << "first element: " << test[0] << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+    delete [] mirror;
     return 0;
 }

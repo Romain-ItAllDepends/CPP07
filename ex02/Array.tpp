@@ -6,7 +6,7 @@
 /*   By: rgobet <rgobet@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:12:02 by rgobet            #+#    #+#             */
-/*   Updated: 2024/11/18 12:56:13 by rgobet           ###   ########.fr       */
+/*   Updated: 2024/11/30 09:51:44 by rgobet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ T			&Array<T>::operator[](const unsigned int size) {
 template< typename T >
 std::ostream &operator<<(std::ostream& out, const Array<T>& a) {
 	int	i = 0;
-	// out << "" << ", bureaucrat grade " << a.getGrade() << ".";
+
 	while (i < a.size() - 1) {
 		out << a._array[i] << ", ";
 		i++;
