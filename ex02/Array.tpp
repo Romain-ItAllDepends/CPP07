@@ -6,7 +6,7 @@
 /*   By: rgobet <rgobet@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:12:02 by rgobet            #+#    #+#             */
-/*   Updated: 2024/11/30 09:51:44 by rgobet           ###   ########.fr       */
+/*   Updated: 2024/12/04 11:26:52 by rgobet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,14 @@ const char* Array<T>::OutOfRangeException::what() const throw() {
 
 template< typename T >
 T			&Array<T>::operator[](const unsigned int size) {
+	if (size >= this->size()) {
+		throw OutOfRangeException();
+	}
+	return (_array[size]);
+}
+
+template< typename T >
+const T			&Array<T>::operator[](const unsigned int size) const {
 	if (size >= this->size()) {
 		throw OutOfRangeException();
 	}
