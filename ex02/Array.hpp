@@ -6,7 +6,7 @@
 /*   By: rgobet <rgobet@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 15:57:18 by rgobet            #+#    #+#             */
-/*   Updated: 2024/12/04 11:26:15 by rgobet           ###   ########.fr       */
+/*   Updated: 2024/12/06 09:17:22 by rgobet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ class Array
 		unsigned int	size() const;
 
 		Array<T>		&operator=(Array<T> const &obj);
-		T				&operator[](const unsigned int size);
-		const T			&operator[](const unsigned int size) const;
+		T				&operator[](const unsigned int &size);
+		const T			&operator[](const unsigned int &size) const;
 		
 		class OutOfRangeException: public std::exception {
 			public:

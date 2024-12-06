@@ -76,7 +76,7 @@ int main(int, char**)
     }
     try
     {
-        numbers[-2] = 0;
+        numbers[-4294967] = 0;
     }
     catch(const std::exception& e)
     {

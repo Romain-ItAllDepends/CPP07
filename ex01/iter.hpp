@@ -6,7 +6,7 @@
 /*   By: rgobet <rgobet@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 13:25:15 by rgobet            #+#    #+#             */
-/*   Updated: 2024/11/16 15:31:47 by rgobet           ###   ########.fr       */
+/*   Updated: 2024/12/06 09:13:56 by rgobet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,12 @@
 # include <iostream>
 # include <stdexcept>
 
-template< typename T >
-void	f1(T const &element) {
-	std::cout << "In the array: " << *element << std::endl;
-}
-
-template< typename T >
-void	f(T ptrArray, unsigned int size, void (*f1)(T const &)) {
+template< typename T, typename F >
+void	iter(T &ptrArray, unsigned int size, F f) {
 	try {
 		for (unsigned int i = 0;i < size;i++) {
-			f1(&ptrArray[i]);
+			f(ptrArray[i]);
+			// std::cout << f(ptrArray[i]) << std::endl;
 		}
 	}
 	catch (std::exception const e) {
